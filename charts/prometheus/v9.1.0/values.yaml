@@ -108,7 +108,7 @@ alertmanager:
     ## alertmanager Ingress hostnames with optional path
     ## Must be provided if Ingress is enabled
     ##
-    hosts: []
+    hosts:
       - prometheus.master.sofia.local
     #   - domain.com/alertmanager
 
