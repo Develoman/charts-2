@@ -93,7 +93,7 @@ alertmanager:
   ingress:
     ## If true, alertmanager Ingress will be created
     ##
-    enabled: false
+    enabled: true
 
     ## alertmanager Ingress annotations
     ##
@@ -109,7 +109,7 @@ alertmanager:
     ## Must be provided if Ingress is enabled
     ##
     hosts: []
-    #   - alertmanager.domain.com
+      - prometheus.master.sofia.local
     #   - domain.com/alertmanager
 
     ## alertmanager Ingress TLS configuration
