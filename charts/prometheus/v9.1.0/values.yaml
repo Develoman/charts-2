@@ -109,7 +109,7 @@ alertmanager:
     ## Must be provided if Ingress is enabled
     ##
     hosts:
-      - prometheus.master.sofia.local
+       - prometheus.master.sofia.local
     #   - domain.com/alertmanager
 
     ## alertmanager Ingress TLS configuration
@@ -117,7 +117,7 @@ alertmanager:
     ##
     tls: []
     #   - secretName: prometheus-alerts-tls
-    #     hosts:
+    #     4
     #       - alertmanager.domain.com
 
   ## Alertmanager Deployment Strategy type
