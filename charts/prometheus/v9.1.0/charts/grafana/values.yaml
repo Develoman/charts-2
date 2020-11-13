@@ -99,26 +99,41 @@ downloadDashboards:
 ##
 service:
   type: ClusterIP
-  servicePort: 80
-#  port: 80
-#  targetPort: 3000
+  port: 80
+  targetPort: 3000
     # targetPort: 4181 To be used with a proxy extraContainer
   annotations: {}
   labels: {}
 
 ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  labels: {}
-  path: /
-  hosts:
-    - grafana.master.sofia.local
-  tls: []
-  #  - secretName: chart-example-tls
-  #    hosts:
-  #      - chart-example.local
+    ## If true, alertmanager Ingress will be created
+    ##
+    enabled: true
+    path: /
+    ## alertmanager Ingress annotations
+    ##
+    annotations: {}
+    #   kubernetes.io/ingress.class: nginx
+    #   kubernetes.io/tls-acme: 'true'
+
+    ## alertmanager Ingress additional labels
+    ##
+    extraLabels: {}
+
+    ## alertmanager Ingress hostnames with optional path
+    ## Must be provided if Ingress is enabled
+    ##
+    hosts:
+       - grafana.master.sofia.local
+    #   - domain.com/alertmanager
+
+    ## alertmanager Ingress TLS configuration
+    ## Secrets must be manually created in the namespace
+    ##
+    tls: []
+    #   - secretName: prometheus-alerts-tls
+    #     4
+    #       - alertmanager.domain.com
 
 resources: {}
 #  limits:
