@@ -26,12 +26,12 @@ deploymentStrategy:
 readinessProbe:
   httpGet:
     path: /api/health
-    port: 3000
+    port: 80
 
 livenessProbe:
   httpGet:
     path: /api/health
-    port: 3000
+    port: 80
   initialDelaySeconds: 60
   timeoutSeconds: 30
   failureThreshold: 10
