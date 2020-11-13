@@ -109,7 +109,7 @@ ingress:
     ## If true, alertmanager Ingress will be created
     ##
     enabled: true
-
+    path: /
     ## alertmanager Ingress annotations
     ##
     annotations: {}
