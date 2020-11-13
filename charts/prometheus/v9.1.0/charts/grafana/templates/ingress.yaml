@@ -26,10 +26,11 @@ spec:
 {{- end }}
   rules:
   {{- range .Values.ingress.hosts }}
-    - host: {{ . }}
+    {{- $url := splitList "/" . }}
+    - host: {{ first $url }}
       http:
         paths:
-          - path: {{ $ingressPath }}
+          - path: /{{ rest $url | join "/" }}
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $servicePort }}
