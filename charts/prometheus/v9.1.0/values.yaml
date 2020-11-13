@@ -1323,4 +1323,4 @@ networkPolicy:
   enabled: false
 
 grafana:
-  enabled: false
+  enabled: true
